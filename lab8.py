@@ -2,7 +2,6 @@
 from abc import ABC, abstractmethod
 
 
-# Базовый абстрактный класс
 class Vehicle(ABC):
     def __init__(self, brand):
         self.brand = brand
@@ -15,8 +14,6 @@ class Vehicle(ABC):
     def FuelConsumption(self):
         pass
 
-
-# Легковой автомобиль
 class Car(Vehicle):
     def Info(self):
         print("Легковой автомобиль:", self.brand)
@@ -24,8 +21,6 @@ class Car(Vehicle):
     def FuelConsumption(self):
         return 8.0
 
-
-# Грузовой автомобиль
 class Truck(Vehicle):
     def Info(self):
         print("Грузовой автомобиль:", self.brand)
@@ -34,7 +29,6 @@ class Truck(Vehicle):
         return 25.0
 
 
-# Мотоцикл
 class Motorcycle(Vehicle):
     def Info(self):
         print("Мотоцикл:", self.brand)
@@ -43,17 +37,14 @@ class Motorcycle(Vehicle):
         return 4.0
 
 
-# Ввод данных
 car = Car(input("Введите марку автомобиля: "))
 truck = Truck(input("Введите марку грузовика: "))
 motorcycle = Motorcycle(input("Введите марку мотоцикла: "))
 
-# Список транспортных средств
 vehicles = [car, truck, motorcycle]
 
 distance = float(input("Введите расстояние (км): "))
 
-# Демонстрация полиморфизма
 for vehicle in vehicles:
     print()
     vehicle.Info()
